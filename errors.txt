@@ -1,0 +1,252 @@
+        
+=== test_bad_request_methods ===
+Time: 0.005
+PASSED
+                
+=== test_duplicate_insert ===
+Time: 0.003
+PASSED
+                
+=== test_incorrect_insert ===
+Time: 0.003
+PASSED
+                
+=== test_not_found_details ===
+Time: 0.002
+PASSED
+                
+=== test_correct_insert ===
+Time: 0.003
+FAILED
+message: 400 != 201
+type: AssertionError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 48, in test_correct_insert
+    self.assertEqual(response.status_code, 201)
+AssertionError: 400 != 201
+		
+
+                
+=== test_all_list ===
+Time: 0.010
+FAILED
+message: Content-Type header is "text/html; charset=utf-8", not "application/json"
+type: ValueError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 85, in test_all_list
+    data = response.json()
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 668, in _parse_json
+    .format(response.get('Content-Type'))
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+		
+
+                
+=== test_correct_decrease_edit ===
+Time: 0.044
+FAILED
+message: the JSON object must be str, not 'bytes'
+type: TypeError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 141, in test_correct_decrease_edit
+    response = self.client.post(product_urls['edit_inventory'].format('2'), payload)
+  File "/home/project/tests/tests.py", line 17, in post
+    return super().post(path, data, 'application/json', *args, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 543, in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 357, in post
+    secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 422, in generic
+    return self.request(**r)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 503, in request
+    raise exc_value
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/project/market/views.py", line 91, in product_edit_inventory_id
+    json_data = json.loads(request.body)
+  File "/usr/local/lib/python3.5/json/__init__.py", line 312, in loads
+    s.__class__.__name__))
+TypeError: the JSON object must be str, not 'bytes'
+		
+
+                
+=== test_correct_increase_edit ===
+Time: 0.013
+FAILED
+message: the JSON object must be str, not 'bytes'
+type: TypeError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 125, in test_correct_increase_edit
+    response = self.client.post(product_urls['edit_inventory'].format('1'), payload)
+  File "/home/project/tests/tests.py", line 17, in post
+    return super().post(path, data, 'application/json', *args, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 543, in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 357, in post
+    secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 422, in generic
+    return self.request(**r)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 503, in request
+    raise exc_value
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/project/market/views.py", line 91, in product_edit_inventory_id
+    json_data = json.loads(request.body)
+  File "/usr/local/lib/python3.5/json/__init__.py", line 312, in loads
+    s.__class__.__name__))
+TypeError: the JSON object must be str, not 'bytes'
+		
+
+                
+=== test_empty_search_list ===
+Time: 0.003
+FAILED
+message: Content-Type header is "text/html; charset=utf-8", not "application/json"
+type: ValueError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 105, in test_empty_search_list
+    data = response.json()
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 668, in _parse_json
+    .format(response.get('Content-Type'))
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+		
+
+                
+=== test_found_details ===
+Time: 0.003
+FAILED
+message: Content-Type header is "text/html; charset=utf-8", not "application/json"
+type: ValueError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 113, in test_found_details
+    data = response.json()
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 668, in _parse_json
+    .format(response.get('Content-Type'))
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
+		
+
+                
+=== test_incorrect_decrease_edit ===
+Time: 0.012
+FAILED
+message: the JSON object must be str, not 'bytes'
+type: TypeError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 157, in test_incorrect_decrease_edit
+    response = self.client.post(product_urls['edit_inventory'].format('2'), payload)
+  File "/home/project/tests/tests.py", line 17, in post
+    return super().post(path, data, 'application/json', *args, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 543, in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 357, in post
+    secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 422, in generic
+    return self.request(**r)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 503, in request
+    raise exc_value
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/project/market/views.py", line 91, in product_edit_inventory_id
+    json_data = json.loads(request.body)
+  File "/usr/local/lib/python3.5/json/__init__.py", line 312, in loads
+    s.__class__.__name__))
+TypeError: the JSON object must be str, not 'bytes'
+		
+
+                
+=== test_incorrect_edit ===
+Time: 0.012
+FAILED
+message: the JSON object must be str, not 'bytes'
+type: TypeError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 165, in test_incorrect_edit
+    response = self.client.post(product_urls['edit_inventory'].format('1'), payload)
+  File "/home/project/tests/tests.py", line 17, in post
+    return super().post(path, data, 'application/json', *args, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 543, in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 357, in post
+    secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 422, in generic
+    return self.request(**r)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 503, in request
+    raise exc_value
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/project/market/views.py", line 91, in product_edit_inventory_id
+    json_data = json.loads(request.body)
+  File "/usr/local/lib/python3.5/json/__init__.py", line 312, in loads
+    s.__class__.__name__))
+TypeError: the JSON object must be str, not 'bytes'
+		
+
+                
+=== test_not_found_edit ===
+Time: 0.012
+FAILED
+message: the JSON object must be str, not 'bytes'
+type: TypeError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 173, in test_not_found_edit
+    response = self.client.post(product_urls['edit_inventory'].format('12'), payload)
+  File "/home/project/tests/tests.py", line 17, in post
+    return super().post(path, data, 'application/json', *args, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 543, in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 357, in post
+    secure=secure, **extra)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 422, in generic
+    return self.request(**r)
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 503, in request
+    raise exc_value
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/project/market/views.py", line 91, in product_edit_inventory_id
+    json_data = json.loads(request.body)
+  File "/usr/local/lib/python3.5/json/__init__.py", line 312, in loads
+    s.__class__.__name__))
+TypeError: the JSON object must be str, not 'bytes'
+		
+
+                
+=== test_search_list ===
+Time: 0.004
+FAILED
+message: Content-Type header is "text/html; charset=utf-8", not "application/json"
+type: ValueError
+
+Traceback (most recent call last):
+  File "/home/project/tests/tests.py", line 95, in test_search_list
+    data = response.json()
+  File "/usr/local/lib/python3.5/site-packages/django/test/client.py", line 668, in _parse_json
+    .format(response.get('Content-Type'))
+ValueError: Content-Type header is "text/html; charset=utf-8", not "application/json"
