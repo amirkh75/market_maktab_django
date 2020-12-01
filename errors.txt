@@ -12,10 +12,10 @@ Time: 0.003
 PASSED
                 
 === test_not_found_details ===
-Time: 0.002
+Time: 0.002+
 PASSED
                 
-=== test_correct_insert ===
+=== test_correct_insert ===                   ?????????????????????????
 Time: 0.003
 FAILED
 message: 400 != 201
@@ -28,7 +28,7 @@ AssertionError: 400 != 201
 		
 
                 
-=== test_all_list ===
+=== test_all_list ===                  pass
 Time: 0.010
 FAILED
 message: Content-Type header is "text/html; charset=utf-8", not "application/json"
@@ -109,7 +109,7 @@ TypeError: the JSON object must be str, not 'bytes'
 		
 
                 
-=== test_empty_search_list ===
+=== test_empty_search_list ===   pass
 Time: 0.003
 FAILED
 message: Content-Type header is "text/html; charset=utf-8", not "application/json"
@@ -124,7 +124,7 @@ ValueError: Content-Type header is "text/html; charset=utf-8", not "application/
 		
 
                 
-=== test_found_details ===
+=== test_found_details ===   
 Time: 0.003
 FAILED
 message: Content-Type header is "text/html; charset=utf-8", not "application/json"
