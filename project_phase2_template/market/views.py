@@ -13,7 +13,6 @@ def product_insert(request):
         return JsonResponse(response_data, status=400)
 
     try:
-       
         json_data = json.loads(request.body)  # get new product variables from request body
         code = json_data['code']
         name = json_data['name']
@@ -21,7 +20,7 @@ def product_insert(request):
         inventory = 0
 
         try:  # inventory is optional
-            assert json_data['inventory']
+            assert json_data['inventory'] 
             inventory = json_data['inventory']
 
         except KeyError:  # if inventory is not set
@@ -31,8 +30,9 @@ def product_insert(request):
 
         Product.objects.create(code=code, name=name, price=price, inventory=inventory).save()  # creat new product
         response_data = {"id": Product.objects.get(code=code).id}# represent product id
-       
-        return JsonResponse(response_data, status=201)  # if every thing is ok
+
+        return JsonResponse(response_data, status=201) # if every thing is ok
+        
 
     except:
 
@@ -93,15 +93,18 @@ def product_edit_inventory_id(request, product_id):
         return JsonResponse({"message": "request method should be POST"}, status=400)
 
     json_data = json.loads(request.body)
-    amount = json_data['amount']
-
+    try:  # inventory is optional
+        amount = json_data['amount']
+    except :  # if amount is not set
+        amount = 0
+        
     if Product.objects.filter(id=product_id).count() != 0:
 
         instance = Product.objects.get(id=product_id)
 
         try:
 
-            if amount > 0:
+            if amount >= 0:
 
                 instance.increase_inventory(amount)
 
@@ -109,6 +112,7 @@ def product_edit_inventory_id(request, product_id):
 
                 assert amount < instance.inventory
                 instance.decrease_inventory(-1 * amount)
+            
             data = {
                 "id": instance.id,
                 "code": instance.code,
